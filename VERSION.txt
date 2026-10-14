@@ -1,0 +1,15 @@
+CYBOLT-DFIR-Uploader-v5.3.1.zip - Version 5.3.1
+
+Build       : 2026-10-14
+Plataforma  : Windows (.NET Framework 4.5.2+)
+
+Componentes:
+  - DFIR_UPLOADER_UI.exe — GUI standalone para subir ZIPs resultantes de
+    adquisiciones DFIR a S3 / FTP / SFTP / SMB.
+  - Soporta SigV4 (AWS), certificados SSH, credenciales Windows.
+  - Audit log local firmado.
+
+Cambios en esta version:
+  - (v5.3.1) Proyecto independiente (split desde monorepo cybolt-dfir-triage).
+                  Cada proyecto ahora tiene su propio versionado y release.
+                  El bundle Uploader es self-contained, sin kape.zip.

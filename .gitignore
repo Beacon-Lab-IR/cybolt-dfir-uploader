@@ -1,0 +1,13 @@
+# Build / OS
+bin/
+obj/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Build outputs (van a GitHub Releases)
+dist/
+staging/
