@@ -133,7 +133,7 @@ namespace DfirUploaderUi
                 using (var http = new HttpClient(handler))
                 {
                     http.Timeout = TimeSpan.FromSeconds(30);
-                    http.DefaultRequestHeaders.UserAgent.ParseAdd("DFIR_UPLOADER_UI/" + ApplicationVersion);
+                    http.DefaultRequestHeaders.UserAgent.ParseAdd("DFIR_UPLOADER_UI/" + AppVersion.Current);
                     var resp = await http.GetAsync(url, ct).ConfigureAwait(false);
                     var statusCode = (int)resp.StatusCode;
                     log("[<] HTTP " + statusCode + " " + resp.ReasonPhrase);
@@ -288,7 +288,6 @@ namespace DfirUploaderUi
             return null;
         }
 
-        private const string ApplicationVersion = "5.3.0";
     }
 
     /// <summary>

@@ -1,6 +1,6 @@
-CYBOLT-DFIR-Uploader-v5.3.1.zip - Version 5.3.1
+CYBOLT-DFIR-Uploader-v0.2.0.zip - Version 0.2.0
 
-Build       : 2026-10-14
+Build       : 2026-10-27
 Plataforma  : Windows (.NET Framework 4.5.2+)
 
 Componentes:
@@ -10,6 +10,8 @@ Componentes:
   - Audit log local firmado.
 
 Cambios en esta version:
-  - (v5.3.1) Proyecto independiente (split desde monorepo cybolt-dfir-triage).
-                  Cada proyecto ahora tiene su propio versionado y release.
-                  El bundle Uploader es self-contained, sin kape.zip.
+  - (v0.2.0) CHORE: una sola version. Tag = ZIP = AssemblyVersion = UI
+                  (AppVersion.Current). Se abandona el esquema dual
+                  release 0.x / assembly 5.x heredado del monorepo.
+  - (v0.1.0 / v5.3.1) Proyecto independiente (split desde monorepo
+                  cybolt-dfir-triage). Bundle self-contained, sin kape.zip.

@@ -2,12 +2,14 @@
 # build.sh - Compila el uploader standalone y genera CyboltDFIR-Uploader-v<VERSION>.zip
 #
 # Uso:
-#   ./build.sh                    # usa version leida de VERSION.txt
-#   ./build.sh 5.3.1              # fuerza version
+#   ./build.sh                    # usa version del header de VERSION.txt
+#   ./build.sh 0.2.0              # fuerza version
 #
 # Output:
 #   dist/CyboltDFIR-Uploader-v<VERSION>.zip
 #
+# Una sola version: tag git = ZIP = AssemblyVersion = UI (AppVersion.Current).
+##
 # Este proyecto es self-contained: solo compila DFIR_UPLOADER_UI.exe y
 # empaqueta. NO incluye kape.zip, Targets/, ni el wizard de triage.
 # Para el bundle completo, ver Beacon-Lab-IR/cybolt-dfir-iso.
@@ -17,10 +19,11 @@ set -euo pipefail
 if [ $# -eq 1 ]; then
     VERSION="$1"
 else
-    VERSION=$(grep -oE 'v5\.[0-9]+\.[0-9]+' VERSION.txt | head -1 | sed 's/^v//')
+    # Primer vX.Y.Z del archivo = header (no el changelog historico)
+    VERSION=$(grep -oE 'v[0-9]+\.[0-9]+\.[0-9]+' VERSION.txt | head -1 | sed 's/^v//')
     if [ -z "$VERSION" ]; then
         echo "ERROR: no se pudo detectar la version de VERSION.txt"
-        echo "Pasala como argumento: $0 5.3.1"
+        echo "Pasala como argumento: $0 0.2.0"
         exit 1
     fi
 fi

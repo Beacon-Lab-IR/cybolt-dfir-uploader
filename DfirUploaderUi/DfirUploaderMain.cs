@@ -57,11 +57,9 @@ namespace DfirUploaderUi
         private CancellationTokenSource _cts;
         private long _totalBytesSelected;
         private long _totalBytesUploaded;
-        private const string ApplicationVersion = "5.3.0";
-
         public DfirUploaderMain()
         {
-            Text = "DFIR Uploader - CYBOLT-DFIR-TRIAGE v" + ApplicationVersion + " - By Cybolt";
+            Text = "DFIR Uploader v" + AppVersion.Current + " - By Cybolt";
             Width = 980;
             Height = 720;
             StartPosition = FormStartPosition.CenterScreen;
@@ -84,7 +82,7 @@ namespace DfirUploaderUi
             // Title
             var lblTitle = new Label
             {
-                Text = "DFIR Uploader - Subida de evidencia a S3-compatible (CYBOLT-DFIR-TRIAGE v" + ApplicationVersion + ")",
+                Text = "DFIR Uploader - Subida de evidencia (S3/FTP/SFTP/SMB) v" + AppVersion.Current,
                 Font = new Font("Segoe UI", 11F, FontStyle.Bold),
                 Location = new Point(12, y),
                 AutoSize = true,
@@ -292,7 +290,7 @@ namespace DfirUploaderUi
             y += txtLog.Height + 6;
             lblFooter.Location = new Point(12, y);
             lblFooter.AutoSize = true;
-            lblFooter.Text = "DFIR_UPLOADER_UI v" + ApplicationVersion + " - By Cybolt, MIT License";
+            lblFooter.Text = "DFIR_UPLOADER_UI v" + AppVersion.Current + " - By Cybolt, MIT License";
             lblFooter.ForeColor = Color.Gray;
             Controls.Add(lblFooter);
         }
@@ -309,7 +307,7 @@ namespace DfirUploaderUi
 
         private void OnLoad()
         {
-            Log("[+] DFIR_UPLOADER_UI v" + ApplicationVersion + " iniciado");
+            Log("[+] DFIR_UPLOADER_UI v" + AppVersion.Current + " iniciado");
             Log("[+] Hostname: " + Environment.MachineName + " | OS: " + Environment.OSVersion.VersionString);
             Log("[+] Usuario: " + Environment.UserName);
         }
@@ -329,7 +327,7 @@ namespace DfirUploaderUi
                             "tu usuario no tiene privilegios suficientes para correr esta GUI.\n\n" +
                             "Pide a tu administrador local o de dominio que ejecute el .exe " +
                             "con permisos elevados.",
-                            "DFIR_UPLOADER_UI v" + ApplicationVersion + " - Permisos",
+                            "DFIR_UPLOADER_UI v" + AppVersion.Current + " - Permisos",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
